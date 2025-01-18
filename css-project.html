@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Master Thesis Blog</title>
+    <link rel="stylesheet" type="text/css" href="blog.css">
+    <!--[if IE]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            background-color: #f4f6f8;
+            color: #444;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            background: linear-gradient(to right, #4e73df, #2c3e50);
+            color: white;
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Container for Content */
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding-bottom: 30px;
+        }
+
+        /* Article Styles */
+        article {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Post Header */
+        .post-head {
+            margin-bottom: 20px;
+        }
+
+        .post-head h2 {
+            font-size: 2.5rem;
+            color: #34495e;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .post-head small {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* Post Body */
+        .post-body {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .post-body h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
+
+        .post-body p {
+            margin-bottom: 1.5em;
+            font-size: 1.1rem;
+        }
+
+        .post-body ul {
+            list-style-type: none;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .post-body li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .post-body li:before {
+            content: "\2022";
+            font-size: 1.6rem;
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Blockquote Styling */
+        blockquote {
+            background-color: #ecf0f1;
+            font-size: 1.3rem;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+            font-style: italic;
+            color: #7f8c8d;
+            border-radius: 10px;
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-top: 60px;
+            padding-top: 20px;
+            padding-bottom: 15px;
+            background-color: #34495e;
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+        footer a {
+            color: #f39c12;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Hover Effects */
+        .post-head h2:hover {
+            color: #2980b9;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .post-body li:hover {
+            background-color: #ecf0f1;
+            transition: all 0.3s ease;
+        }
+
+        .post-body a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .post-body a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            #container {
+                width: 90%;
+            }
+
+            article {
+                padding: 25px;
+            }
+
+            .post-head h2 {
+                font-size: 2rem;
+            }
+
+            .post-body h3 {
+                font-size: 1.6rem;
+            }
+
+            footer p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Master Thesis Blog</h1>
+        <p>Your daily dose of thoughts and inspiration</p>
+    </header>
+    <div id="container">
+        <article>
+            <section class="post-head">
+                <h2>My Master Thesis: Exploring the Path to Breaking Poverty Lines</h2>
+                <small>
+                    Posted on <time datetime="2025-01-20">Saturday, January 20, 2025</time>
+                </small>
+            </section>
+            <section class="post-body">
+                <h3>The Inspiration Behind the Thesis</h3>
+                <p>
+                    Education is often referred to as the great equalizer, a tool capable of breaking poverty cycles and enabling upward social mobility. Yet, the reality is far from ideal in many parts of the world, including Mexico. Growing up in a country with stark socioeconomic disparities, I became acutely aware of the challenges millions face in accessing quality education. These challenges sparked my curiosity: How could we create a system that provides equal opportunities for all?
+                </p>
+                <h3>The Core Focus</h3>
+                <p>
+                    My thesis, <strong>“(In-)Equality of Opportunity in the Mexican Education System: A Survey- and Literature-Based Evaluation,”</strong> examined inequality of opportunity within Mexico’s education system. Specifically, it sought to identify how socioeconomic factors—such as family income, geographic location, and parental education—impact a child’s ability to access quality education and, ultimately, break free from poverty.
+                </p>
+                <h3>Key Findings</h3>
+                <ul>
+                    <li><strong>Socioeconomic Disparities:</strong> Family background remains one of the strongest determinants of educational success. Students from wealthier families consistently outperform their peers from low-income households, not due to a lack of ability, but due to unequal access to resources.</li>
+                    <li><strong>Geographic Inequalities:</strong> Rural areas face significant challenges, including fewer schools, poorly trained teachers, and limited access to technological resources. These gaps widen the divide between urban and rural educational outcomes.</li>
+                    <li><strong>Policy Gaps:</strong> While some policies aim to improve education equity, many fall short in addressing the root causes of inequality, such as poverty and social exclusion. A more holistic approach is necessary.</li>
+                </ul>
+                <h3>The Broader Implications</h3>
+                <p>
+                    This research reinforced a critical understanding: education reform alone is not enough. To genuinely break poverty lines, policymakers must address the interconnected factors of inequality, such as income disparity, social mobility, and access to healthcare. Only then can education fulfill its promise of providing equal opportunities for all.
+                </p>
+                <h3>A Personal Reflection</h3>
+                <p>
+                    Writing this thesis was both challenging and rewarding. It was an opportunity to contribute to a pressing issue close to my heart, and it deepened my understanding of the systemic changes required to achieve true equality of opportunity. More importantly, it solidified my commitment to advocating for policies that prioritize education equity, not just in Mexico, but globally.
+               
